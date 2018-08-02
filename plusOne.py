@@ -28,3 +28,35 @@ class Solution(object):
         for i in strNum:
             ret.append(int(i))
         return ret
+
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        if digits is None:
+            return
+
+        length = len(digits)
+        for i in range(length - 1, -1, -1):
+            if digits[i] != 9:
+                digits[i] += 1
+                return digits
+            else:
+                digits[i] = 0
+        digits.insert(0, 1)
+        return digits
+
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        str_num=''
+        for i in digits:
+            str_num+=str(i)
+        ret = int(str_num)+1
+        str_ret= list(str(ret))
+        return [int(i) for i in str_ret]
